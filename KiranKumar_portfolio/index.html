@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cloud Engineer Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Dark Mode Toggle -->
+  <div class="dark-mode-toggle">
+    <label class="switch">
+      <input type="checkbox" id="modeToggle">
+      <span class="slider round"></span>
+    </label>
+    <span class="toggle-label">Dark Mode</span>
+  </div>
+
+  <div class="container">
+    <nav>
+      <h2 class="logo">Portfolio.</h2>
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="internship.html">Internship</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="Academic projects.html">Academy Projects</a></li>
+        <li><a href="personal project.html">Personal Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-text">
+        <h4>Hello, It's Me</h4>
+        <h1>Kiran Kumar M</h1>
+        <h3>And I'm a <span>Cloud Engineer or DevOps Engineer</span></h3>
+        <p>
+          I’m a Cloud Engineering enthusiast with a strong interest in cloud computing and modern IT infrastructure. As a recent graduate, I have hands-on experience with AWS tools like EC2, S3, IAM, DynamoDB and DevOps tools like Git, Docker. I'm eager to learn, grow, and apply my knowledge to real-world solutions.
+        </p>
+        <div class="socials">
+          <a href="https://github.com/kiranleo10" target="_blank">
+            <img src="icons8-github.svg" alt="GitHub" />
+          </a>
+          <a href="https://www.linkedin.com/in/kiran-kumar-m-a8a944211" target="_blank">
+            <img src="icons8-linkedin.svg" alt="LinkedIn" />
+          </a>
+        </div>
+        <a href="Kiran Kumar M_CV.pdf" download class="btn">Download CV</a>
+      </div>
+      <div class="hero-img">
+        <img src="Kiran Kumar photo.png" alt="Picture"/>
+      </div>
+    </section>
+  </div>
+
+  <!-- Dark Mode Script -->
+  <script>
+    const toggle = document.getElementById('modeToggle');
+    const body = document.body;
+
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+      body.classList.add('light-mode');
+      toggle.checked = false;
+    } else {
+      body.classList.add('dark-mode');
+      toggle.checked = true;
+    }
+
+    toggle.addEventListener('change', () => {
+      body.classList.toggle('dark-mode');
+      body.classList.toggle('light-mode');
+      const currentTheme = body.classList.contains('dark-mode') ? 'dark' : 'light';
+      localStorage.setItem('theme', currentTheme);
+    });
+  </script>
+</body>
+</html>
